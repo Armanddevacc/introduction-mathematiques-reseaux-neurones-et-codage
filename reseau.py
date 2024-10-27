@@ -12,7 +12,7 @@ from math import *
 import matplotlib.pyplot as plt
 import numpy as np
 import random as rd
-import generate_mnist_csv 
+import format_mnist_db 
 
 
 
@@ -74,7 +74,7 @@ def tester_reseau():
 ##initialisation
 # Exemple d'utilisation
 fichier = "database/mnist_train.csv"  # Remplace par le chemin de ton fichier
-picture = generate_mnist_csv.charger_mnist_format_liste(fichier)[0]#liste de 784 valeurs qui definisent l'image de 28*28 qui represente un nombre
+picture = format_mnist_db.charger_mnist_format_liste(fichier)[0]#liste de 784 valeurs qui definisent l'image de 28*28 qui represente un nombre
 print(picture)
 nombre_layer=2 # nombre de couche 
 nombre_neurone = [0 for _ in range(nombre_layer+2)] #disons 16 neurones par couches mais c'est comment vous voulez
