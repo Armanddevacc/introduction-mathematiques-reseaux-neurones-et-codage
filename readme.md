@@ -16,7 +16,9 @@ Ce dossier a pour objectif de d'apprendre à ses lecteurs comment fonctionne un 
 - **Nous avons ensuite des couches cachées (hidden layers), ces couches permettent de faire des calculs qu'on détaillera plus tard, notre RN aura 2 couches internes**
 - **la couche de sortie (output layer) renvoie un nombre entre 0 et 1 pour chaque neurone, il y a autant de neurones à la sortie que de réponses envisagées. Dans notre exemple, notre RN aura 10 neurones dans sa couche de sortie**
 - **La fonction sigmoïde ou fonction logistique est une fonction (appelée fonction d'ativation) qui va de R dans [0,1]**
+
 ![fonction](https://github.com/Armanddevacc/introduction-mathematiques-reseaux-neurones-et-codage/blob/main/image/fonction-sigmoide.png)
+
 - **le biais est un réel qui permet d'éviter l'activation de certains neurones en dessous d'une certaine valeur (noté b1 ... bn). Ainsi le neurone s'active si et seulement si (ssi) la somme(S définit ci-dessous) est supérieur à ce biais. D'ou la soustraction**
 
 ![Equation](https://github.com/Armanddevacc/introduction-mathematiques-reseaux-neurones-et-codage/blob/main/image/somme.png)
@@ -54,7 +56,7 @@ Pour vous entraînez vous pouvez créer un réseau de neurones en suivant toutes
 ### Introduction de la fonction Coût
 Supposons que nous prenons des valeurs de biais et des poids aléatoires. Les résultats seront alors très confus comme on l'a vu en partie1. On introduit alors la fonction coût
 
-![Equation](https://github.com/Armanddevacc/introduction-mathematiques-reseaux-neurones-et-codage/blob/main/image/fonction_cout.png)
+![Equation](https://github.com/Armanddevacc/introduction-mathematiques-reseaux-neurones-et-codage/blob/main/image/fonction-cout.png)
 
 avec g la fonction qui donne la valeur de y_i à travers le réseau de nerones,  z_i nul sauf pour la valeur qu’on est censé obtenir à la fin. Dans l’exemple précedent si les données d’entrées correspondent à un 9 alors z_10 = 1 et les autres sont nulles. Ainsi plus la fonction coût est petite plus le reseau est bon. Evidemment pour exécuter cette fonction on est cencé avoir avoir les résultats attendus d'ou la nécésité de disposer de données d'entrainement. Pour information dans notre exemple la fonction prend en arguement 13.002 éléments.
 
