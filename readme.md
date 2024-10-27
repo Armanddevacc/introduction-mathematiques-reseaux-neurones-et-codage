@@ -41,10 +41,32 @@ celle-ci prendrait en arguements les valeurs des neurones de la couches précede
 
 On a appris la structure et comment les valeurs des neurones sont determinées dans un réseau de neurones. Celles-ci dépendent des valeurs de poids et de biais mais si on prend ces valeurs, comment alors les choisir? C'est ce qu'on va aborder dans cette deuxième partie.
 
+### Teste et exercice
+
+Pour vous entraînez vous pouvez créer un réseau de neurones en suivant toutes les définitions données. vous trouverez la base de donnée des écritures à la main des chiffres ici: https://git-disl.github.io/GTDLBench/datasets/mnist_datasets/ depuis j'ai moi même codé ce réseau de neurones simple et non vraiment fonctionnel car on n'entraine pas ce réseau. Touver ce fichier dans reseau.py.
+
 
 
 ## 2.Comment choisir les valeurs de poids et de biais:
 
 ### Entraînement d'un réseau de neurones
-Supposons que nous prenons des valeurs de biais et des poids aléatoires. Les résultats seront alors très confus
+
+### Introduction de la fonction Coût
+Supposons que nous prenons des valeurs de biais et des poids aléatoires. Les résultats seront alors très confus comme on l'a vu en partie1. On introduit alors la fonction coût
+
+![Equation](https://github.com/Armanddevacc/introduction-mathematiques-reseaux-neurones-et-codage/blob/main/image/fonction_cout.png)
+
+avec g la fonction qui donne la valeur de y_i à travers le réseau de nerones,  z_i nul sauf pour la valeur qu’on est censé obtenir à la fin. Dans l’exemple précedent si les données d’entrées correspondent à un 9 alors z_10 = 1 et les autres sont nulles. Ainsi plus la fonction coût est petite plus le reseau est bon. Evidemment pour exécuter cette fonction on est cencé avoir avoir les résultats attendus d'ou la nécésité de disposer de données d'entrainement. Pour information dans notre exemple la fonction prend en arguement 13.002 éléments.
+
+Un autre indicateur est la moyenne sur toutes les données d'entrainement de cette fonction. On cherche bien evidemment à le diminuer
+
+On comprend l'intérêt de trouver les valeurs qui minimisent ces indicateurs.
+
+### Méthode de minimisation: descente de gradiant
+
+#### en 1D
+
+Juste pour l'évoquer en 1D: On peut penser à dériver mais c'est pas toujours possible, on peut alors utiliser les méthodes d'euler ou de newton. On imagine bien que le cas 1D n'arrive pas.
+
+#### en 2D et plus
 
