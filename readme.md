@@ -100,6 +100,19 @@ Ainsi calculons le gradiant de cette fonction en (1,1), on obtient alors le vect
 
 #### explication:
 
+C'est un algorithme détermine comment un seul entrainement désire modifier l'ensemble biais + poids. Ils donnent ainsi quelles améliorations provoquent un les effet les plus rapides. Pour ce faire on prend les valeurs (y1 ... yn) de sortie une par une et on regarde l'ensemble poids, biai, et activation(n-1), on sait par ailleurs si ce (y1 ... yn) doit augementer ou baisser et avec quelle intensité:
+
+##### Tout d'abord l'ensemble poids + biai: 
+On se focalise ainsi sur les arêtes les plus fortes (celle dont le produit w_i*a_i est le plus élevé) est on cherche à augementer ou baisser w_i en fonction de si on doit augementer ou baisser la valeur d'activation de sorti. L'augmentation de w_i est ainsi proportiennel à l'augementation des a_i
+
+##### Ensuite l'ensemble activation(n-1: la couche précedent)
+On se focalise aussi sur les arêtes les plus fortes que ce soit en négatif ou positif et on vient émettre la volonté (volonté car on ne peut pas changer les activation) ou non de augementer ou baisser a_i. Encore une fois l'augmentation de w_i est ainsi proportiennel à l'augementation des a_i. Cependant il ne faut pas oublier que il faut prendre en compte la volonté de tout les neurones de changé les a_i. On somme ainsi tout les désire des neurones pour avoir une liste de ce qu'il faut regarder sur la liste précedente. 
+
+On applique récursivement ce procesus sur les neurones précedents jusqu'à remonter aux neurones d'entrés. On modifie alors les poids et les biais ici pour au mieux impacter les neurones de sortis
+
+#### Qu'est ce que ça donne en terme de math:
+
+
 
 
 
