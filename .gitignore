@@ -1,3 +1,5 @@
 .venv/
 __pycache__/
 database/mnist_test.csv
+database/mnist_train.csv
+database/
