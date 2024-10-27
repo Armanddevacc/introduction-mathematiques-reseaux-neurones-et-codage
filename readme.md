@@ -27,6 +27,7 @@ Ce dossier a pour objectif de d'apprendre à ses lecteurs comment fonctionne un 
 La valeur d'un neurones de la couche n dépend entièrement de neurones précédents, cette valeur est définie par la formule:
 
 ![Equation](https://github.com/Armanddevacc/introduction-mathematiques-reseaux-neurones-et-codage/blob/main/image/fonction-neurone.png)
+
 f est ainsi la fonction d'activation (nous utiliserons la fonction sigmoïde) et les autres valeurs ont été introduites.
 ### Écriture:
 Il est très courant d'écrire un réseau de neurones avec les notations et indices introduits dans le premier graphique. On notera aussi:
@@ -45,7 +46,7 @@ On a appris la structure et comment les valeurs des neurones sont determinées d
 
 ### Teste et exercice
 
-Pour vous entraînez vous pouvez créer un réseau de neurones en suivant toutes les définitions données. vous trouverez la base de donnée des écritures à la main des chiffres ici: https://git-disl.github.io/GTDLBench/datasets/mnist_datasets/ depuis j'ai moi même codé ce réseau de neurones simple et non vraiment fonctionnel car on n'entraine pas ce réseau. Touver ce fichier dans reseau.py.
+Pour vous entraînez vous pouvez créer un réseau de neurones en suivant toutes les définitions données. vous trouverez la base de donnée des écritures à la main des chiffres ici: https://git-disl.github.io/GTDLBench/datasets/mnist_datasets/ depuis j'ai moi même codé ce RN simple et non vraiment fonctionnel car on n'entraine pas ce réseau. Touver ce fichier dans reseau.py.
 
 
 
@@ -62,13 +63,62 @@ avec g la fonction qui donne la valeur de y_i à travers le réseau de nerones, 
 
 Un autre indicateur est la moyenne sur toutes les données d'entrainement de cette fonction. On cherche bien evidemment à le diminuer
 
-On comprend l'intérêt de trouver les valeurs qui minimisent ces indicateurs.
+On comprend l'intérêt de trouver les valeurs qui minimisent ces indicateurs. Plus spéfiquement si le cout moyen est diminué alors l'ensemble du RN est optimisé. Vous pouvez implementez cette fonction coût en python vous aussi. Je l'ai fait dans cout.py
 
-### Méthode de minimisation: descente de gradiant
+D'ailleurs cette fonction nous permet de comprendre l'entéret de l'encodage hot-one: cette encodage qui est très fréquence en RN permet à un nombre d'être traduit en vecteur: par exemple:
+    0: Résultat attendu: [1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    5: Résultat attendu: [0, 0, 0, 0, 0, 1, 0, 0, 0, 0]
+Ainsi pour appelé la fonction cout il est plus pratique de lui fournir le résultat attendu dans ce format.
+
+### Méthodes de minimisation: descente de gradiant
 
 #### en 1D
 
 Juste pour l'évoquer en 1D: On peut penser à dériver mais c'est pas toujours possible, on peut alors utiliser les méthodes d'euler ou de newton. On imagine bien que le cas 1D n'arrive pas.
 
-#### en 2D et plus
+#### en 2D et plus: La descente de gradiant
+
+Pour ceux qui ne sont pas familier avec le concept de descente de gradient chez les fonctions à plusieurs vairables, on pourrait expliquer ça par la recherche en un point donné de la direction vers laquelle notre fonction va le plus décroite. Je va calculer ce gradient jusqu'à que la fonction cout moyen en dessous d'une certaine valeur (comme pour la méthode d'euler et newton nous n'arriverons pas à un 0 stricte). Ce gradient est calculé par la méthode de backpropagation qui est considéré comme le centre de l'apprentissage des RN. Ainsi quand on parle d'un RN qui apprend, on veut dire qu'il minimise sa fonction coût. 
+La méthode de descente de gradiant permet de savoir quelles biais et poids doivent être augmentés ou baissés et à quelle force. Cette méthode nous donnera un vecteur colonne avec des valeurs positive ou négative et de même longueur que le nombre de biais et de poids.
+
+prenons un exemple en 2D pour comprendre et visualiser/
+
+![Equation](https://github.com/Armanddevacc/introduction-mathematiques-reseaux-neurones-et-codage/blob/main/image/expression_courbe.png)
+![photo-d-une-courbe](https://github.com/Armanddevacc/introduction-mathematiques-reseaux-neurones-et-codage/blob/main/image/courbe_dessin.png)
+
+Ainsi calculons le gradiant de cette fonction
+
+![Equation](https://github.com/Armanddevacc/introduction-mathematiques-reseaux-neurones-et-codage/blob/main/image/gradiant_courbe.png
+)
+
+Ainsi calculons le gradiant de cette fonction en (1,1), on obtient alors le vecteur (2,2). Ce vecteur pointe alors vers l'endroit de la pente la plus raide, l'impacte est alors le même si on modifie (x,y) pareilement. Mais si on prend le point (1/2,1), on observe alors qu'il faut qu'on fasse une modification deux fois plus importe sur x que y pour arriver au même stade. On mets ici en exergue l'impacte différent de certains poid par rapport à d'autre. En outre certains point aurons plus d'etre modifier avec plus de force que d'autre.
+
+
+
+
+### Backpropagation
+
+#### explication:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## on pourrait croire que les layers reperes les formes mais c'est faux
+
+
+
+
 

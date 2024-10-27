@@ -11,8 +11,6 @@ Ce code initialisera correctement le réseau avec des biais et des poids aléato
 from math import *
 import matplotlib.pyplot as plt
 import numpy as np
-import random as rd
-import format_mnist_db 
 
 
 
@@ -38,7 +36,7 @@ def affichage_fonction():
 
 
 
-def fonction_neurone(i,j): 
+def fonction_neurone(i,j, biais,poid,Matrice_des_neurones): 
     """
     parametre:
     L: matrice des valeurs de tout les neurones
@@ -54,13 +52,17 @@ def fonction_neurone(i,j):
     return a
 
 
-def tester_reseau():
+def predire(picture, biais, poid,nombre_neurone):
     """
     on parcourt et remplit simplement notre Matrice_des_neurones
     """
+    Matrice_des_neurones = [[0 for _ in range(nombre_neurone[i])] for i in range(len(nombre_neurone))] # ce n'est pas vraiment une matrice en vrai
+
+    Matrice_des_neurones[0]= picture
+
     for i in range(1,len(Matrice_des_neurones)):
         for j in range(len(Matrice_des_neurones[i])):
-            a_i_j =fonction_neurone(i,j)
+            a_i_j =fonction_neurone(i,j, biais, poid,Matrice_des_neurones)
             Matrice_des_neurones[i][j]=a_i_j
     return Matrice_des_neurones[-1]
 
@@ -69,37 +71,3 @@ def tester_reseau():
 
 
 
-
-
-##initialisation
-# Exemple d'utilisation
-fichier = "database/mnist_train.csv"  # Remplace par le chemin de ton fichier
-picture = format_mnist_db.charger_mnist_format_liste(fichier)[0]#liste de 784 valeurs qui definisent l'image de 28*28 qui represente un nombre
-print(picture)
-nombre_layer=2 # nombre de couche 
-nombre_neurone = [0 for _ in range(nombre_layer+2)] #disons 16 neurones par couches mais c'est comment vous voulez
-nombre_neurone[0]=784
-nombre_neurone[1]=16
-nombre_neurone[2]=16
-nombre_neurone[3]=10
-
-biais= [] # on les définit aléatoirement:
-biais.append([rd.randint(0, 5) for _ in range(16)])
-biais.append([rd.randint(0, 5) for _ in range(16)])
-biais.append([rd.randint(0, 5) for _ in range(10)])
-
-poid = [] # de même
-poid.append([[rd.randint(-1, 1) for _ in range(784)] for _ in range(16)])
-poid.append([[rd.randint(-1, 1) for _ in range(16)] for _ in range(16)])
-poid.append([[rd.randint(-1, 1) for _ in range(16)] for _ in range(10)])
-
-couche_sortie = [0 for _ in range(10)]
-Matrice_des_neurones = [[0 for _ in range(nombre_neurone[i])] for i in range(len(nombre_neurone))] # ce n'est pas vraiment une matrice en vrai
-Matrice_des_neurones[0]= picture
-
-
-
-
-
-if __name__ == '__main__':
-    print(tester_reseau())
