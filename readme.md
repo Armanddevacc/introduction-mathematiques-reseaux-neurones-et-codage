@@ -7,6 +7,6 @@ Ce dossier a pour objectif de faire apprendre à ses lecteurs comment fonctionne
 
 ## Structure
 ---
-![Cover](https://github.com/Armanddevacc/introduction_mathematiques_reseaux_neurones_et-codage/blob/main/image/NN.png)
+![Cover](https://github.com/Armanddevacc/introduction-mathematiques-reseaux-neurones-et-codage/blob/main/image/NN.png)
 ---
 
