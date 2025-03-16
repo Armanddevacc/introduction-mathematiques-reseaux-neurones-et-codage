@@ -20,3 +20,18 @@ Pour découvrir et expérimenter avec le réseau de neurones, veuillez ouvrir le
 
 neurone.ipynb : Explications théoriques et implémentations en Python des concepts de réseaux de neurones, de la fonction de coût et de l’algorithme de backpropagation.
 main.py / coup.py ect... qui sont les différentes fonctions
+
+## Configuration de l'environnement et installation des bibliothèques requises
+1. Installer uv                            
+    `pip install uv`
+
+2. Créer un environnement virtuel avec Python 3.12
+    `uv venv --python 3.12`
+
+3. Activer l'environnement virtuel 
+    `source .venv/bin/activate` pour Mac/Linux
+    `.venv\Scripts\activate` pour Windows
+
+4. Installer les bibliothèques requises 
+    `uv pip install -r requirements.txt`
+
