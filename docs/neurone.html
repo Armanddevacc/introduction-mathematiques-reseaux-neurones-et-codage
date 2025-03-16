@@ -7519,7 +7519,7 @@ a.anchor-link {
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h1 id="Introduction-math%C3%A9matique-aux-r%C3%A9seaux-de-neurones-et-codage-d'un-r%C3%A9seau-simple">Introduction mathématique aux réseaux de neurones et codage d'un réseau simple<a class="anchor-link" href="#Introduction-math%C3%A9matique-aux-r%C3%A9seaux-de-neurones-et-codage-d'un-r%C3%A9seau-simple">¶</a></h1><h2 id="Description-du-projet">Description du projet<a class="anchor-link" href="#Description-du-projet">¶</a></h2><p>Ce dossier a pour objectif d'expliquer aux lecteurs le fonctionnement d’un réseau de neurones classique. Nous aborderons les aspects mathématiques tout en utilisant Python pour appliquer et visualiser les concepts étudiés. Afin de mieux comprendre le fonctionnement des réseaux de neurones (RN), nous construirons un modèle capable de reconnaître des chiffres manuscrits.</p>
 <h2 id="1.-Structure">1. Structure<a class="anchor-link" href="#1.-Structure">¶</a></h2><hr/>
-<h2 id=""><img alt="reseau-de-neurones" src="/image/NN.png"/><a class="anchor-link" href="#">¶</a></h2><h3 id="On-d%C3%A9finit-plusieurs-termes-:">On définit plusieurs termes :<a class="anchor-link" href="#On-d%C3%A9finit-plusieurs-termes-:">¶</a></h3><ul>
+<h2 id=""><img alt="reseau-de-neurones" src="https://raw.githubusercontent.com/Armanddevacc/introduction-mathematiques-reseaux-neurones-et-codage/refs/heads/main/image/NN.png"/><a class="anchor-link" href="#">¶</a></h2><h3 id="On-d%C3%A9finit-plusieurs-termes-:">On définit plusieurs termes :<a class="anchor-link" href="#On-d%C3%A9finit-plusieurs-termes-:">¶</a></h3><ul>
 <li><strong>Un neurone est une valeur réelle comprise entre 0 et 1.</strong></li>
 <li><strong>Les poids (weights notés w1 ... wn) qui sont associés à chaque arête, ils appartiennent à R (les réels).</strong></li>
 <li><strong>Les données d'entrée (x1 ... xk) sont les données qu'on fournit à notre RN. Dans l'exemple de la reconnaissance de chiffres à partir d'une image en nuances de gris, ils représentent un pixel et un chiffre entre 0 et 1 où 0 est un pixel blanc et 1 un pixel noir.</strong></li>
@@ -7527,7 +7527,7 @@ a.anchor-link {
 <li><strong>La couche de sortie (output layer) renvoie un nombre entre 0 et 1 pour chaque neurone. Il y a autant de neurones à la sortie que de réponses envisagées. Dans notre exemple, notre RN aura 10 neurones dans sa couche de sortie.</strong></li>
 <li><strong>La fonction sigmoïde ou fonction logistique est une fonction (appelée fonction d'activation) qui va de R dans [0,1].</strong></li>
 </ul>
-<p><img alt="fonction" src="/image/fonction-sigmoide.png"/></p>
+<p><img alt="fonction" src="https://raw.githubusercontent.com/Armanddevacc/introduction-mathematiques-reseaux-neurones-et-codage/refs/heads/main/image/fonction-sigmoide.png"/></p>
 <ul>
 <li><strong>Le biais est un réel qui permet d'éviter l'activation de certains neurones en dessous d'une certaine valeur (noté b1 ... bn). Ainsi, le neurone s'active si et seulement si (ssi) la somme (S définie ci-dessous) est supérieure à ce biais. D'où la soustraction.</strong></li>
 </ul>
