@@ -4,6 +4,8 @@
 
 Ce projet vise à fournir une compréhension des réseaux de neurones (RN) en explorant leurs concepts mathématiques et leur implémentation en Python. L’objectif est de montrer comment un réseau de neurones simple peut reconnaître des chiffres écrits à la main en s’appuyant sur la base de données MNIST.
 
+[Notebook](https://armanddevacc.github.io/introduction-mathematiques-reseaux-neurones-et-codage/neurone.html)
+
 ## Le fichier neurone.ipynb contient une explication détaillée des notions suivantes :
 
 - **Structure d’un réseau de neurones : présentation des neurones, poids, biais, couches d’entrée, couches cachées et couches de sortie.**
